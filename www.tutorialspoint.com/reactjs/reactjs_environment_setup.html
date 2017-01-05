@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+
+<!-- Mirrored from www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jan 2017 03:03:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>ReactJS Environment Setup</title>
+<meta name="description" content="ReactJS Environment Setup - Learn ReactJS starting from Overview, Environment Setup, JSX, Components, State, Props Overview, Props Validation, Component API, Component Life Cycle, Forms, Events, Refs, Keys, Router, Flux concept, Using Flux, Animations, Server side Rendering, Higher order Components." /> 
+<meta name="keywords" content="ReactJS, Tutorial, Learning, Beginners, Overview, Environment Setup, JSX, Components, State, Props Overview, Props Validation, Component API, Component Life Cycle, Forms, Events, Refs, Keys, Router, Flux concept, Using Flux, Animations, Server side Rendering, Higher order Components." /> 
+<base  />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="robots" content="index, follow"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="../theme/js/script-min-v4.js"></script>
+<link rel="stylesheet" href="../theme/css/style-min.css">
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #02b6d7 url(../images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #02b6d7 !important;}
+.submenu-item{ border-bottom: 2px solid #02b6d7 !important; border-top: 2px solid #02b6d7 !important }
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="../images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="https://www.tutorialspoint.com/index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="https://www.tutorialspoint.com/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a href="http://www.sendfiles.net/"><i class="fa fa-send"></i> &nbsp;SENDFiles</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="../theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="https://www.tutorialspoint.com/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+         <!-- search code here  --> 
+      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+   </div>
+  
+   <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="https://www.tutorialspoint.com/index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown" id="liTL"><a class="dropdown" href="javascript:void(0);"><span class="tut-lib"> Tutorials Library <i class="fa-caret-down"></i></span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/tutor_connect/index.php"><i class="fa-user"> </i> Tutor Connect</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+         <div class="submenu-item sub-main-menu" id="top-sub-menu"></div>
+         
+      </div>
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="images/reactjs-mini-logo.jpg" alt="ReactJS Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">ReactJS Tutorial</li>
+<li><a href="index-2.html">ReactJS - Home</a></li>
+<li><a href="reactjs_overview.html">ReactJS - Overview</a></li>
+<li><a href="reactjs_environment_setup.html">ReactJS - Environment Setup</a></li>
+<li><a href="reactjs_jsx.html">ReactJS - JSX</a></li>
+<li><a href="reactjs_components.html">ReactJS - Components</a></li>
+<li><a href="reactjs_state.html">ReactJS - State</a></li>
+<li><a href="reactjs_props_overview.html">ReactJS - Props Overview</a></li>
+<li><a href="reactjs_props_validation.html">ReactJS - Props Validation</a></li>
+<li><a href="reactjs_component_api.html">ReactJS - Component API</a></li>
+<li><a href="reactjs_component_life_cycle.html">ReactJS - Component Life Cycle</a></li>
+<li><a href="reactjs_forms.html">ReactJS - Forms</a></li>
+<li><a href="reactjs_events.html">ReactJS - Events</a></li>
+<li><a href="reactjs_refs.html">ReactJS - Refs</a></li>
+<li><a href="reactjs_keys.html">ReactJS - Keys</a></li>
+<li><a href="reactjs_router.html">ReactJS - Router</a></li>
+<li><a href="reactjs_flux_concept.html">ReactJS - Flux concept</a></li>
+<li><a href="reactjs_using_flux.html">ReactJS - Using Flux</a></li>
+<li><a href="reactjs_animations.html">ReactJS - Animations</a></li>
+<li><a href="reactjs_higher_order_components.html">ReactJS - Higher order Components</a></li>
+<li><a href="reactjs_best_practices.html">ReactJS - Best Practices</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu" >
+<li class="heading">ReactJS Useful Resources</li>
+<li><a href="reactjs_quick_guide.html">ReactJS - Quick Guide</a></li>
+<li><a href="reactjs_useful_resources.html">ReactJS - Useful Resources</a></li>
+<li><a href="reactjs_discussion.html">ReactJS - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>ReactJS - Environment Setup</h1>
+<div class="topgooglead">
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="reactjs_overview.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="reactjs_jsx.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>In this tutorial we will show you how to set up environment for successful React development. Notice that there are many steps involved but this will help you to speed up development process later. We will need <b>NodeJS</b> so if you don't have it installed, check the link from the table below.</p>
+<table class="table table-bordered">
+<tr>
+<th>SN</th>
+<th style="width:150px;">Software</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>1</td>
+<td>NodeJS and NPM</td>
+<td>NodeJS is the platform needed for the Cordova development. Checkout our <a href="https://www.tutorialspoint.com/nodejs/nodejs_environment_setup.htm" target="_blank">NodeJS Environment Setup</a>.</td>
+</tr>
+</table>
+<h2>Step 1 - Install Global Packages</h2>
+<p>You will need to install several packages for this setup. We will need some of the <b>babel</b> plugins so let's first install <b>babel</b> by running the following code in <b>command prompt</b> window.</p>
+<pre class="result notranslate">
+C:\Users\username>npm install -g babel
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username>npm install -g babel-cli
+</pre>
+<h2>Step 2 - Create Root Folder</h2>
+<p>The root folder will be named <b>reactApp</b> and we will place it on <b>Desktop</b>. After the folder is created we need to open it and create empty <b>package.json</b> file inside by running <b>npm init</b> from the <b>command prompt</b> and follow the instructions.</p>
+<pre class="result notranslate">
+C:\Users\username\Desktop>mkdir reactApp
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>npm init
+</pre>
+<h2>Step 3 - Add Dependencies and plugins</h2>
+<p>We will use <b>webpack</b> bundler in these tutorials so let's install <b>webpack</b> and <b>webpack-dev-server</b>.</p>
+<pre class="result notranslate">
+C:\Users\username>npm install webpack --save
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username>npm install webpack-dev-server --save
+</pre>
+<p>Since we want to use React, we need to install it first. The <b>--save</b> command will add these packages to <b>package.json</b> file.</p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>npm install react --save
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>npm install react-dom --save
+</pre>
+<p>We already mentioned that we will need some <b>babel</b> plugins so let's install it too.</p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>npm install babel-core
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>npm install babel-loader
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>npm install babel-preset-react
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>npm install babel-preset-es2015
+</pre>
+<h2>Step 4 - Create files</h2>
+<p>Let's create several files that we need. You can add it manually or you can use <b>command prompt</b>.</p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>touch index.html
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>touch App.jsx
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>touch main.js
+</pre>
+<p></p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>touch webpack.config.js
+</pre>
+<h2>Step 5 - Set Compiler, Server and Loaders</h2>
+<p>Open <b>webpack-config.js</b> file and add the code below. We are setting webpack entry point to be <b>main.js</b>. Output path is the place where bundled app will be served. We are also setting development server to <b>8080</b> port. You can choose any port you want. And lastly, we are setting babel loaders to search for <b>js</b> files and use <b>es2015</b> and <b>react</b> presets that we installed before.</p>
+<h3>webpack.config.js</h3>
+<pre class="result notranslate">
+var config = {
+   entry: './main.js',
+	
+   output: {
+      path:'./',
+      filename: 'index.js',
+   },
+	
+   devServer: {
+      inline: true,
+      port: 8080
+   },
+	
+   module: {
+      loaders: [
+         {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel',
+				
+            query: {
+               presets: ['es2015', 'react']
+            }
+         }
+      ]
+   }
+}
+
+module.exports = config;
+</pre>
+<p>Open the <b>package.json</b> and delete <b>"test" "echo \"Error: no test specified\" &amp;&amp; exit 1"</b> inside <b>"scripts"</b> object. We are deleting this line since we will not do any testing in this tutorials. Let's add the <b>start</b> command instead.</p>
+<pre class="result notranslate">
+"start": "webpack-dev-server --hot"
+</pre>
+<p>Now we can use <b>npm start</b> command to start the server. <b>--hot</b> command will add live reload after something is changed inside our files so we don't need to refresh the browser every time we change our code.</p>
+<h2>Step 6 - index.html</h2>
+<p>This is just regular HTML. We are setting <b>div id = "app"</b> as a root element for our app and adding <b>index.js</b> script which is our bundled app file.</p>
+<pre class="prettyprint notranslate">
+&lt;!DOCTYPE html&gt;
+&lt;html lang = "en"&gt;
+
+   &lt;head&gt;
+      &lt;meta charset = "UTF-8"&gt;
+      &lt;title&gt;React App&lt;/title&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;div id = "app"&gt;&lt;/div&gt;
+      &lt;script src = "index.js"&gt;&lt;/script&gt;
+   &lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+<h2>Step 7 - App.jsx and main.js</h2>
+<p>This is the first react component. We will explain React components in depth in one of our later tutorials. This component will render <b>Hello World!!!</b>.</p>
+<h3>App.jsx</h3>
+<pre class="prettyprint notranslate">
+import React from 'react';
+
+class App extends React.Component {
+   render() {
+      return (
+         &lt;div&gt;
+            Hello World!!!
+         &lt;/div&gt;
+      );
+   }
+}
+
+export default App;
+</pre>
+<p>We need to import this component and render it to our root <b>App</b> element so we can see it in browser.</p>
+<h3>main.js</h3>
+<pre class="prettyprint notranslate">
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));
+</pre>
+<h3>NOTE</h3>
+<p>Whenever you want to use something, you need to <b>import</b> it first. If you want to make component usable in other parts of the app, you need to <b>export</b> it after creation and <b>import</b> it in the file where you want to use it.</p>
+<h2>Step 8 - Running the Server</h2>
+<p>The setup is finished and we can start the server by running:</p>
+<pre class="result notranslate">
+C:\Users\username\Desktop\reactApp>npm start
+</pre>
+<p>It will show you the port we need to open in browser, in our case <b>http://localhost:8080/</b>. After we open it we will see the following output:</p>
+<img src="images/react-hello-world.jpg" alt="React Hello World" />
+<hr />
+<div class="pre-btn">
+<a href="reactjs_overview.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="https://www.tutorialspoint.com/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="reactjs_jsx.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script type="text/javascript"><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'http://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'http://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'http://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=http://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=http://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=http://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="https://www.tutorialspoint.com/index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="../scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="https://www.tutorialspoint.com/about/tutorials_writing.htm">Write for us</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/faq.htm">FAQ's</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/about_helping.htm">Helping</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2016. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script type="text/javascript" src="../theme/js/custom-min.js"></script>
+<script src="../../www.google-analytics.com/urchin.js">
+</script>
+<script type="text/javascript">
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+</div>
+</body>
+
+<!-- Mirrored from www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jan 2017 03:03:59 GMT -->
+</html>
